@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Campaign;
+use App\Draw;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 
@@ -10,10 +11,12 @@ class campaignController extends Controller
 {
 
     public function draw(){
-        $data = file_get_contents("results.json");
-        $data = json_decode($data);
+        $meta_data =\DB::select("select * from draws where count = -1");
+        $data =(array) \DB::select("select * from draws where not count = -1");
         //print_r($data);
-        return view("charts")->with('data',$data);
+
+        return view("charts")
+            ->with('data',$data);
     }
     /**
      * Display a listing of the resource.
@@ -117,10 +120,15 @@ class campaignController extends Controller
 
         $input = $request->input();
         $result = \DB::select("select ".$input['dimension'].", ".$input['fields'].", count(*) as count from campaigns where created_at > '".$input['duration']['start']."' and created_at < '".$input['duration']['end']."' group by ".$input['dimension'].", ".$input['fields']." order by ".$input['dimension']."");
-        $message = "task completed successfully open this url in your browser to show the result: http://127.0.0.1:8000/charts";
-        $fp = fopen('results.json', 'a','\n');
-        fwrite($fp, json_encode($result));
-        fclose($fp);
+
+        \DB::select("delete  from draws");
+        foreach ($result as $row){
+            $row =(array)$row;
+            \DB::select("insert into draws (dimension, field, count) values('".$row[$input['dimension']]."', '".$row[$input['fields']]."',".$row['count'].")");
+
+        }
+        print_r($result);
+        $message = "task completed successfully open this url in your browser to show the result: https://tranquil-bayou-72645.herokuapp.com/charts";
         print_r($message);
 
     }
