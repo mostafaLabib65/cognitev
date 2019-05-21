@@ -1,0 +1,21 @@
+<!doctype html><html><head><script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script><script type="text/javascript">
+    window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer",{
+            title:{
+                text: "Graph"
+            },
+            data:[
+                {
+                    type: "column",
+                    dataPoints:[
+
+                        {label:'USA',y:1},{label:'USA',y:3},{label:'EGY',y:1},
+
+
+                    ]
+                }
+            ]
+        });
+        chart.render();
+    }
+</script></head><body><div id="chartContainer" style="height: 270px; width: 40%;"></div></body></html>
