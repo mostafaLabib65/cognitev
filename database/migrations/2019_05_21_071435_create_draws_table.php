@@ -17,6 +17,7 @@ class CreateDrawsTable extends Migration
             $table->string('dimension');
             $table->string('field');
             $table->integer('count');
+            $table->integer('table_number');
             $table->timestamps();
         });
     }

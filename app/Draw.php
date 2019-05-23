@@ -11,17 +11,20 @@ class draw extends Model
         'dimension',
         'field',
         'count',
+        'table_number',
     ];
 
     public static $rules = [
         'dimension'=>'required',
         'field'=>'required',
-        'count'=>'required'
+        'count'=>'required',
+        'table_number'=>'required'
     ];
 
     protected $casts = [
         'dimension'=>'string',
         'field'=>'string',
-        'count'=>'integer'
+        'count'=>'integer',
+        'table_number'=>'integer'
     ];
 }

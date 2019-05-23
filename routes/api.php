@@ -17,9 +17,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource("/","campaignController");
+Route::post("/insert","campaignController@store");
+Route::get("/campaigns","campaignController@index");
+Route::get("/campaigns/{id}","campaignController@show");
+Route::put("/campaigns/{id}","campaignController@put");
+Route::patch("/campaigns/{id}","campaignController@patch");
+Route::delete("/campaigns/{id}","campaignController@destroy");
+
 Route::get("/analyze","campaignController@analyze");
-Route::get("/{id}", "campaignController@show");
-Route::delete("/{id}", "campaignController@destroy");
-Route::put("/{id}", "campaignController@put");
-Route::patch("/{id}", "campaignController@patch");
