@@ -53,16 +53,20 @@ It will return all the data
 
 ## 3) to show certain element run this command into terminal:
 curl -X GET https://tranquil-bayou-72645.herokuapp.com/api/campaigns/{id};
+
 Ex:curl -X GET https://tranquil-bayou-72645.herokuapp.com/api/campaigns/1;
 It will return all the data
+
 ## 4) to delete data element from api run the following command:
 curl -X DELETE https://tranquil-bayou-72645.herokuapp.com/api/campaigns/{id};
+
 Ex:curl -X DELETE ​https://tranquil-bayou-72645.herokuapp.com/api/campaigns/1;
 It will return element deleted successfully
 
 
 ## 5)to update an element send request using postman:
 PUT ​https://tranquil-bayou-72645.herokuapp.com/api/campaigns/{id};
+
 Ex :PUT https://tranquil-bayou-72645.herokuapp.com/api/campaigns/1
 
 ## Json file format:
@@ -80,12 +84,14 @@ Ex:​PATCH https://tranquil-bayou-72645.herokuapp.com/api/campaigns/1
 
 ## Json file format:( ​ Note: you can choose any field you want ​ )
 
-#### {
+{
 "goal": ​"Conversion"​,
 "category": ​"Sports"
 }
+
 ## 6) to analyze data send request using postman:
 GET ​https://tranquil-bayou-72645.herokuapp.com/api/analyze;
+
 ## Json file format:
 
  {
