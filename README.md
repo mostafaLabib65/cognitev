@@ -112,3 +112,5 @@ To show your charts just open this link after doing your analysis:
 https://tranquil-bayou-72645.herokuapp.com/charts
 
 
+### Assumtions:
+There is only one campaign at a time.
