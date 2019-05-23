@@ -10,14 +10,7 @@ use Illuminate\Support\Facades\View;
 class campaignController extends Controller
 {
 
-    public function draw(){
-        $meta_data =\DB::select("select * from draws where count = -1");
-        $data =(array) \DB::select("select * from draws where not count = -1");
-        //print_r($data);
 
-        return view("charts")
-            ->with('data',$data);
-    }
     /**
      * Display a listing of the resource.
      *
@@ -68,6 +61,7 @@ class campaignController extends Controller
             }
             $input->save();
         }
+        print_r("task finished succesfully");
     }
 
     /**
@@ -113,22 +107,26 @@ class campaignController extends Controller
     public function destroy($id)
     {
         Campaign::destroy($id);
+        print_r("element deleted successfully");
     }
 
     public function analyze(Request $request)
     {
 
         $input = $request->input();
-        $result = \DB::select("select ".$input['dimension'].", ".$input['fields'].", count(*) as count from campaigns where created_at > '".$input['duration']['start']."' and created_at < '".$input['duration']['end']."' group by ".$input['dimension'].", ".$input['fields']." order by ".$input['dimension']."");
-
-        \DB::select("delete  from draws");
-        foreach ($result as $row){
-            $row =(array)$row;
-            \DB::select("insert into draws (dimension, field, count) values('".$row[$input['dimension']]."', '".$row[$input['fields']]."',".$row['count'].")");
-
+        $results = array();
+        foreach ($input['dimension'] as $dimension){
+            $dimensionResults = array();
+            foreach ($input['fields'] as $field){
+                $result = \DB::select("select ".$dimension.", ".$field.", count(*) as count from campaigns where created_at > '".$input['duration']['start']."' and created_at < '".$input['duration']['end']."' group by ".$dimension.", ".$field." order by ".$dimension."");
+                array_push($dimensionResults, $result);
+            }
+            array_push($results, $dimensionResults);
         }
-        print_r($result);
-        $message = "task completed successfully open this url in your browser to show the result: https://tranquil-bayou-72645.herokuapp.com/charts";
+
+        drawController::store($results, $input);
+        print_r($results);
+        $message = "\ntask completed successfully open this url in your browser to show the result: https://tranquil-bayou-72645.herokuapp.com/charts";
         print_r($message);
 
     }

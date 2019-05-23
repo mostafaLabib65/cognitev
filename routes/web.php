@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/charts', 'campaignController@draw');
+Route::get('/charts', 'drawController@draw');
 
 
