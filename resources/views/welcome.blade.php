@@ -82,12 +82,12 @@
     <div style="position:absolute;left:40.53px;top:121.86px" class="cls_006"><span class="cls_006">curl -X GET https://tranquil-bayou-72645.herokuapp.com/api/campaigns;</span></div>
     <div style="position:absolute;left:36.03px;top:142.12px" class="cls_005"><span class="cls_005">It will return all the data</span></div>
     <div style="position:absolute;left:36.03px;top:172.15px" class="cls_008"><span class="cls_008">3) to show certain element run this command into terminal:</span></div>
-    <div style="position:absolute;left:39.03px;top:207.43px" class="cls_006"><span class="cls_006">curl -X GET https://tranquil-bayou-72645.herokuapp.com/campaigns/{id};</span></div>
-    <div style="position:absolute;left:39.03px;top:222.44px" class="cls_006"><span class="cls_006">Ex:curl -X GET https://tranquil-bayou-72645.herokuapp.com/campaigns/1;</span></div>
+    <div style="position:absolute;left:39.03px;top:207.43px" class="cls_006"><span class="cls_006">curl -X GET https://tranquil-bayou-72645.herokuapp.com/api/campaigns/{id};</span></div>
+    <div style="position:absolute;left:39.03px;top:222.44px" class="cls_006"><span class="cls_006">Ex:curl -X GET https://tranquil-bayou-72645.herokuapp.com/api/campaigns/1;</span></div>
     <div style="position:absolute;left:36.03px;top:242.71px" class="cls_005"><span class="cls_005">It will return all the data</span></div>
     <div style="position:absolute;left:36.03px;top:272.73px" class="cls_008"><span class="cls_008">4) to delete data element from api run the following command:</span></div>
-    <div style="position:absolute;left:35.28px;top:308.01px" class="cls_006"><span class="cls_006">curl -X DELETE https://tranquil-bayou-72645.herokuapp.com/campaigns/{id};</span></div>
-    <div style="position:absolute;left:35.28px;top:323.03px" class="cls_006"><span class="cls_006">Ex:curl -X DELETE https://tranquil-bayou-72645.herokuapp.com/campaigns/1;</span></div>
+    <div style="position:absolute;left:35.28px;top:308.01px" class="cls_006"><span class="cls_006">curl -X DELETE https://tranquil-bayou-72645.herokuapp.com/api/campaigns/{id};</span></div>
+    <div style="position:absolute;left:35.28px;top:323.03px" class="cls_006"><span class="cls_006">Ex:curl -X DELETE https://tranquil-bayou-72645.herokuapp.com/api/campaigns/1;</span></div>
     <div style="position:absolute;left:36.03px;top:343.29px" class="cls_005"><span class="cls_005">It will return element deleted successfully</span></div>
     <div style="position:absolute;left:36.03px;top:418.36px" class="cls_008"><span class="cls_008">5)to update an element send request using postman:</span></div>
     <div style="position:absolute;left:39.78px;top:438.62px" class="cls_006"><span class="cls_006">PUT https://tranquil-bayou-72645.herokuapp.com/api/campaigns/{id};</span></div>
@@ -114,7 +114,6 @@
         <img src="723a0f3e-7d70-11e9-9d71-0cc47a792c0a_id_723a0f3e-7d70-11e9-9d71-0cc47a792c0a_files/background3.jpg" width=596 height=843></div>
     <div style="position:absolute;left:36.03px;top:71.57px" class="cls_005"><span class="cls_005">6) to analyze data send request using postman:</span></div>
     <div style="position:absolute;left:45.04px;top:106.84px" class="cls_006"><span class="cls_006">GET https://tranquil-bayou-72645.herokuapp.com/api/analyze</span><span class="cls_006">;</span></div>
-    <div style="position:absolute;left:45.04px;top:121.86px" class="cls_014"><span class="cls_014">Ex:</span><span class="cls_006">GET https://tranquil-bayou-72645.herokuapp.com/api/analyze</span></div>
     <div style="position:absolute;left:36.03px;top:142.37px" class="cls_004"><span class="cls_004">Json file format:</span></div>
     <div style="position:absolute;left:49.54px;top:165.39px" class="cls_006"><span class="cls_006">{</span></div>
     <div style="position:absolute;left:78.82px;top:180.41px" class="cls_006"><span class="cls_006">"dimension":{</span></div>
