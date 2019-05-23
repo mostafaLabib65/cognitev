@@ -47,22 +47,23 @@ curl -X POST ​https://tranquil-bayou-72645.herokuapp.com/api/insert​ -d @inp
  "category": ​"Sports"
  }]
 
-**2) To get the data from api run this command into terminal:**
-curl -X GET ​https://tranquil-bayou-72645.herokuapp.com​/api/​campaigns;
+## 2) To get the data from api run this command into terminal:
+curl -X GET https://tranquil-bayou-72645.herokuapp.com/api/campaigns;
 It will return all the data
-**3) to show certain element run this command into terminal:**
-curl -X GET ​https://tranquil-bayou-72645.herokuapp.com​/api/​campaigns/{id};
-Ex:curl -X GET ​https://tranquil-bayou-72645.herokuapp.com​/api/​campaigns/1;
+
+## 3) to show certain element run this command into terminal:
+curl -X GET https://tranquil-bayou-72645.herokuapp.com/api/campaigns/{id};
+Ex:curl -X GET https://tranquil-bayou-72645.herokuapp.com/api/campaigns/1;
 It will return all the data
-**4) to delete data element from api run the following command:**
-curl -X DELETE ​https://tranquil-bayou-72645.herokuapp.com​/api/​campaigns/{id};
-Ex:curl -X DELETE ​https://tranquil-bayou-72645.herokuapp.com​/api/​campaigns/1;
+## 4) to delete data element from api run the following command:
+curl -X DELETE https://tranquil-bayou-72645.herokuapp.com/api/campaigns/{id};
+Ex:curl -X DELETE ​https://tranquil-bayou-72645.herokuapp.com/api/campaigns/1;
 It will return element deleted successfully
 
 
-**5)to update an element send request using postman:**
-PUT ​https:​/​/tranquil-bayou-72645.herokuapp.com/api/campaigns/​{id};
-Ex :PUT​ ​https:​/​/tranquil-bayou-72645.herokuapp.com/api/campaigns/​ 1
+## 5)to update an element send request using postman:
+PUT ​https://tranquil-bayou-72645.herokuapp.com/api/campaigns/{id};
+Ex :PUT https://tranquil-bayou-72645.herokuapp.com/api/campaigns/1
 
 ## Json file format:
 
@@ -74,8 +75,8 @@ Ex :PUT​ ​https:​/​/tranquil-bayou-72645.herokuapp.com/api/campaigns/​
 "category": ​"Sports"
 }
 Or you can run this command:
-PATCH ​https:​/​/tranquil-bayou-72645.herokuapp.com/api/campaigns/​{id}
-Ex:​PATCH ​https:​/​/tranquil-bayou-72645.herokuapp.com/api/campaigns/​ 1
+PATCH ​https://tranquil-bayou-72645.herokuapp.com/api/campaigns/{id}
+Ex:​PATCH https://tranquil-bayou-72645.herokuapp.com/api/campaigns/1
 
 ## Json file format:( ​ Note: you can choose any field you want ​ )
 
@@ -83,10 +84,8 @@ Ex:​PATCH ​https:​/​/tranquil-bayou-72645.herokuapp.com/api/campaigns/�
 "goal": ​"Conversion"​,
 "category": ​"Sports"
 }
-6) to analyze data send request using postman:
-GET ​https:​/​/tranquil-bayou-72645.herokuapp.com/api/analyze​;
-Ex:​GET ​https:​/​/tranquil-bayou-72645.herokuapp.com/api/analyze​;
-
+## 6) to analyze data send request using postman:
+GET ​https://tranquil-bayou-72645.herokuapp.com/api/analyze;
 ## Json file format:
 
  {
